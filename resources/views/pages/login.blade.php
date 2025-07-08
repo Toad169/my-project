@@ -11,20 +11,27 @@
 <!-- Right: Login Form -->
 <div class="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
   <h1 class="text-2xl font-semibold mb-4">Login</h1>
-  <form action="#" method="POST">
+  <form action="{{ route('login.post') }}" method="POST">
+    @csrf
     <!-- Username Input -->
     <div class="mb-4">
       <label for="email" class="block text-gray-600">Email</label>
-      <input type="text" id="email" name="email" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off">
+      <input type="text" id="email" name="email" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off" value="{{ old('email') }}">
+      @error('email')
+        <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+      @enderror
     </div>
     <!-- Password Input -->
     <div class="mb-4">
       <label for="password" class="block text-gray-600">Password</label>
       <input type="password" id="password" name="password" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off">
+      @error('password')
+        <div class="text-red-500 text-sm mt-1">{{ $message }}</div>
+      @enderror
     </div>
     <!-- Remember Me Checkbox -->
     <div class="mb-4 flex items-center">
-      <input type="checkbox" id="remember" name="remember" class="text-blue-500">
+      <input type="checkbox" id="remember" name="remember" class="text-blue-500" {{ old('remember') ? 'checked' : '' }}>
       <label for="remember" class="text-gray-600 ml-2">Remember Me</label>
     </div>
     <!-- Forgot Password Link -->

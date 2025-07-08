@@ -18,4 +18,8 @@ Route::get('/register', function () {
     return view('pages.register');
 })->name('register');
 
+Route::post('/login', [App\Http\Controllers\Auth\LoginController::class, 'login'])->name('login.post');
+Route::post('/register', [App\Http\Controllers\Auth\RegisterController::class, 'register'])->name('register.post');
+Route::post('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
+
 require __DIR__.'/auth.php';
