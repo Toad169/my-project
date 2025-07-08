@@ -6,8 +6,8 @@
     <!-- You must be the change you wish to see in the world. - Mahatma Gandhi -->
     <div class="bg-white p-8 rounded-lg shadow-lg w-96">
         <div class="text-center mb-8">
-            <h1 class="text-3xl font-bold text-gray-800"></h1>
-            <p class="text-gray-500">Login </p>
+            <h1 class="text-3xl font-bold text-gray-800">Login</h1>
+            <p class="text-gray-500"> </p>
         </div>
 
         <form id="loginForm" class="space-y-6">
