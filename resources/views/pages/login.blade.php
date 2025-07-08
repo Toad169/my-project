@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div>
+<div class="min-h-screen flex items-center justify-center">
     <!-- You must be the change you wish to see in the world. - Mahatma Gandhi -->
     <div class="bg-white p-8 rounded-lg shadow-lg w-96">
         <div class="text-center mb-8">
