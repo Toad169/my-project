@@ -17,7 +17,7 @@
               <ul class="flex items-center gap-6 text-sm">
 
                 <li>
-                  <a class="text-gray-500 transition hover:text-gray-500/75" href="{{ route('home') }}"> Home </a>
+                  <a class="text-gray-500 transition hover:text-gray-500/75" href="{{ route(name: 'home') }}"> Home </a>
                 </li>
 
                 <li>
@@ -50,14 +50,14 @@
               <div class="sm:flex sm:gap-4">
                 <a
                   class="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
-                  href="#"
+                  href="{{ route(name: 'login') }}"
                 >
                   Login
                 </a>
       
                 <a
                   class="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
-                  href="#"
+                  href="{{ route(name: 'register') }}"
                 >
                   Register
                 </a>
