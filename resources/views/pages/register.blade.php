@@ -2,46 +2,44 @@
 
 @section('content')
 
-<div class="min-h-screen flex items-center justify-center">
-    <!-- Happiness is not something readymade. It comes from your own actions. - Dalai Lama -->
-    <div class="bg-white p-8 rounded-lg shadow-lg w-96">
-        <div class="text-center mb-8">
-            <h1 class="text-3xl font-bold text-gray-800">Signin</h1>
-            <p class="text-gray-500"></p>
-        </div>
-
-        <form id="loginForm" class="space-y-6">
-            <div>
-                <label for="username" class="block text-sm font-medium text-gray-700">Username</label>
-                <input type="text" id="username" required
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-            </div>
-
-            <div>
-                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" id="email" required
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-            </div>
-
-            <div>
-                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
-                <input type="password" id="password" required
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-            </div>
-
-            <div>
-                <label for="password" class="block text-sm font-medium text-gray-700">Confirm Password</label>
-                <input type="password" id="password" required
-                    class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500">
-            </div>
-
-            <button type="submit"
-                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
-                Sign in
-            </button>
-        </form>
-
-        
+<!-- component -->
+<div class="bg-gray-100 flex justify-center items-center h-screen py-6">
+    <!-- Left: Image -->
+<div class="w-1/2 h-screen hidden lg:block">
+  <img src="https://placehold.co/800x/667fff/ffffff.png?text=Your+Image&font=Montserrat" alt="Placeholder Image" class="object-cover w-full h-full">
+</div>
+<!-- Right: Login Form -->
+<div class="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
+  <h1 class="text-2xl font-semibold mb-4">Signin</h1>
+  <form action="#" method="POST">
+    <!-- Username Input -->
+    <div class="mb-4">
+      <label for="email" class="block text-gray-600">Email</label>
+      <input type="text" id="email" name="email" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off">
     </div>
+
+    <div class="mb-4">
+        <label for="username" class="block text-gray-600">Username</label>
+        <input type="text" id="username" name="username" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off">
+      </div>
+    <!-- Password Input -->
+    <div class="mb-4">
+      <label for="password" class="block text-gray-600">Password</label>
+      <input type="password" id="password" name="password" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off">
+    </div>
+
+    <div class="mb-4">
+        <label for="password" class="block text-gray-600">Konfirmasi Password</label>
+        <input type="password" id="password" name="password" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off">
+      </div>
+    <!-- Remember Me Checkbox -->
+    
+    <!-- Forgot Password Link -->
+    
+    <!-- Login Button -->
+    <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full">Signin</button>
+  </form>
+  
+</div>
 </div>
 @endsection
