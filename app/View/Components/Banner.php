@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class HITLER extends Component
+class Banner extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class HITLER extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.h-i-t-l-e-r');
+        return view('components.banner');
     }
 }
