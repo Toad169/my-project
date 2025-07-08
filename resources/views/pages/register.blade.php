@@ -6,8 +6,8 @@
     <!-- Happiness is not something readymade. It comes from your own actions. - Dalai Lama -->
     <div class="bg-white p-8 rounded-lg shadow-lg w-96">
         <div class="text-center mb-8">
-            <h1 class="text-3xl font-bold text-gray-800">Welcome Back</h1>
-            <p class="text-gray-500">Sign in to continue </p>
+            <h1 class="text-3xl font-bold text-gray-800"></h1>
+            <p class="text-gray-500">Signin</p>
         </div>
 
         <form id="loginForm" class="space-y-6">
