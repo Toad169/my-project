@@ -1,4 +1,4 @@
-<div>
+<div class="header">
     <!-- Happiness is not something readymade. It comes from your own actions. - Dalai Lama -->
     <header class="bg-white">
         <div class="mx-auto flex h-24 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8">
@@ -23,6 +23,14 @@
                 <li>
                   <a class="text-gray-500 transition hover:text-gray-500/75" href="{{ route('about') }}"> About </a>
                 </li>
+
+                @auth
+                    @if($isAdmin)
+                        <li>
+                          <a class="text-gray-500 transition hover:text-gray-500/75" href="{{ route('admin.dashboard') }}"> Admin </a>
+                        </li>
+                    @endif
+                @endauth
       
                 {{-- <li>
                   <a class="text-gray-500 transition hover:text-gray-500/75" href="#"> Careers </a>
@@ -47,21 +55,36 @@
             </nav>
       
             <div class="flex items-center gap-4">
-              <div class="sm:flex sm:gap-4">
-                <a
-                  class="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
-                  href="{{ route(name: 'login') }}"
-                >
-                  Login
-                </a>
-      
-                <a
-                  class="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
-                  href="{{ route(name: 'register') }}"
-                >
-                  Register
-                </a>
-              </div>
+              @guest
+                <div class="sm:flex sm:gap-4">
+                  <a
+                    class="block rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-teal-700"
+                    href="{{ route(name: 'login') }}"
+                  >
+                    Login
+                  </a>
+        
+                  <a
+                    class="hidden rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600 transition hover:text-teal-600/75 sm:block"
+                    href="{{ route(name: 'register') }}"
+                  >
+                    Register
+                  </a>
+                </div>
+              @else
+                <div class="flex items-center gap-4">
+                  <span class="text-sm text-gray-700">Welcome, {{ auth()->user()->name }}</span>
+                  @if($isAdmin)
+                    <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                      Admin
+                    </span>
+                  @endif
+                  <form method="POST" action="{{ route('logout') }}" class="inline">
+                    @csrf
+                    <button type="submit" class="text-red-600 hover:text-red-800 text-sm">Logout</button>
+                  </form>
+                </div>
+              @endguest
       
               <button
                 class="block rounded-sm bg-gray-100 p-2.5 text-gray-600 transition hover:text-gray-600/75 md:hidden"

@@ -18,12 +18,12 @@
         @endif
     </head>
     <body class="bg-white">
-        @include('components.header')
+        <x-header />
         
         <div>
             @yield('content')
         </div>
 
-        @include('components.footer')
+        <x-footer  />
     </body>
 </html>
