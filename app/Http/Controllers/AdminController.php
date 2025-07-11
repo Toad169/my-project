@@ -17,7 +17,7 @@ class AdminController extends Controller
         $adminUsers = User::where('is_admin', true)->count();
         $regularUsers = User::where('is_admin', false)->count();
 
-        return view('admin.dashboard', compact('totalUsers', 'adminUsers', 'regularUsers'));
+        return view('admin.pages.dashboard', compact('totalUsers', 'adminUsers', 'regularUsers'));
     }
 
     /**
@@ -26,7 +26,7 @@ class AdminController extends Controller
     public function users(): View
     {
         $users = User::latest()->paginate(10);
-        return view('admin.users', compact('users'));
+        return view('admin.pages.users', compact('users'));
     }
 
     /**
